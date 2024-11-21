@@ -1,0 +1,39 @@
+/* Navbar background */
+.navbar {
+  background-color: #f8f9fa !important; /* Light background color */
+  border-bottom: 1px solid #ddd; /* Optional: adds a subtle bottom border */
+}
+
+/* Styling for the navbar brand */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000 !important; /* Black text color */
+}
+
+/* Adjust link styles */
+.nav-link {
+  font-size: 1rem;
+  margin-right: 15px;
+  color: #000000 !important; /* Black text color */
+  transition: font-weight 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Hover effect for nav links */
+.nav-link:hover {
+  font-weight: bold;
+  color: #000000 !important; /* Keep black text but make it bold */
+}
+
+/* Active link styling */
+.nav-link.active {
+  font-weight: bold;
+  color: #007bff !important; /* Bootstrap's primary blue */
+}
+
+/* Button inside the navbar */
+.btn-primary {
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
