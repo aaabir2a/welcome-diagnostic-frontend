@@ -32,7 +32,7 @@
 }
 
 /* Button inside the navbar */
-.btn-primary {
+.navButton {
   font-size: 0.9rem;
   padding: 8px 16px;
   border-radius: 5px;

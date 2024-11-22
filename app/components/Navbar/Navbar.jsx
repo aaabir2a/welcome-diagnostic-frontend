@@ -1,9 +1,9 @@
-"use client";
+// "use client";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-const Navbar = () => {
+const Navbar = ({ buttonText = "Check Report" }) => {
     return (
         <nav className={`navbar navbar-expand-lg navbar-light bg-light sticky-top ${styles.navbar}`}>
           <div className="container">
@@ -28,7 +28,7 @@ const Navbar = () => {
                   <Link className="nav-link" href="/about">About Us</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="/services">Services</Link>
+                  <Link className="nav-link" href="/m-services">Services</Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" href="/medical-procedure">Medical Procedure</Link>
@@ -40,7 +40,9 @@ const Navbar = () => {
                   <Link className="nav-link" href="/contact">Contact Us</Link>
                 </li>
               </ul>
-              <Link href="/check-report" className="btn btn-primary">Check Report</Link>
+              <Link href="/check-report">
+          <button className="btn btn-outline-primary ms-3">{buttonText}</button>
+        </Link>
             </div>
           </div>
         </nav>

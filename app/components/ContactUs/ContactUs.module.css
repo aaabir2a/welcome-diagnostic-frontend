@@ -1,0 +1,24 @@
+.chooseUs {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-image: url('/contact-us-bg.jpg'); /* Default background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .chooseUs:hover {
+    background-image: url('/contact-us-bg-hover.jpg'); /* Hover background image */
+  }
+  
+  .content {
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+
+  

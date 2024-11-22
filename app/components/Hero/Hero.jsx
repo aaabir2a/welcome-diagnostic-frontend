@@ -4,13 +4,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Hero = () => {
   return (
-    <div>
-      <div>
-        <Image src="/bg.jpg"
-        alt="Example"
-        width={500}
-        height={300}/>
-        <h1>Hero Section</h1>
+    <div className={styles.hero}>
+      <div className={styles.content}>
+        <p className={styles.subtitle}>WELCOME TO</p>
+        <h1 className={styles.title}>
+          IBN OMAR MEDICAL AND DIAGNOSTIC CENTER
+        </h1>
+        <h2 className={styles.subtext}>
+          ইবনে ওমর মেডিক্যাল এন্ড ডায়াগনস্টিক সেন্টার
+        </h2>
+        <p className={styles.description}>Smart Steps to Health</p>
+        <div className={styles.buttons}>
+          <button className="btn btn-primary">Know Us</button>
+          <button className="btn btn-outline-primary ms-3">Contact Us</button>
+        </div>
       </div>
     </div>
   );

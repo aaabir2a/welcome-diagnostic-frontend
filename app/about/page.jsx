@@ -1,9 +1,12 @@
 export default function About() {
     return (
-      <div className="container py-5">
-        <h2>About Us</h2>
-        <p>We are a team dedicated to providing exceptional services...</p>
-      </div>
+<section style={{ padding: '50px', textAlign: 'center' }}>
+      <h1>About Us</h1>
+      <p>
+        Ibn Omar Medical & Diagnostic Center is committed to providing trusted and advanced medical services.
+        Learn more about our history, mission, and values.
+      </p>
+    </section>
     );
   }
   
