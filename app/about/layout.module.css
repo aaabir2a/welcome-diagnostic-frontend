@@ -4,5 +4,144 @@
     min-height: 100vh;
   }
   
+  .about {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Hero Section */
+  .hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 50px 0;
+    overflow: hidden; /* Ensures the pseudo-element doesn't overflow the parent */
+}
 
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/bg.jpg") no-repeat center center/cover;
+    opacity: 0.5; /* Apply opacity to the image */
+    z-index: -1; /* Place it behind the content */
+}
+  
+
+  
+  .hero:hover {
+    background-color: #e0f0ff; /* Slightly darker blue on hover */
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #1a1a1a; /* Dark text color */
+    transition: color 0.3s ease; /* Smooth transition for text hover */
+  }
+  
+  .hero p {
+    font-size: 1rem;
+    color: #333; /* Medium-dark text color */
+  }
+  
+  .hero:hover h1 {
+    color: #0056b3; /* Change text color on hover */
+  }
+  
+  .hero:hover p {
+    color: #007bff; /* Change paragraph text color on hover */
+  }
+  
+  
+  .hero a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  .hero a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Why Choose Us Section */
+  .whyChooseUs {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+  }
+  
+  .whyChooseUs .content {
+    flex: 1;
+  }
+  
+  .whyChooseUs h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .whyChooseUs p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Interactive Section with Cards */
+  .interactiveSection {
+    text-align: center;
+    padding: 50px;
+    background: #f9f9f9;
+  }
+  
+  .interactiveSection h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .cardContainer {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .card {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Google Map Section */
+  .mapSection {
+    padding: 50px;
+  }
+  
+  .mapSection h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .mapContainer {
+    text-align: center;
+  }
+  
   

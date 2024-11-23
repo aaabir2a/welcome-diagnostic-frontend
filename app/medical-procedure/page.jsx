@@ -1,8 +1,15 @@
 import React from 'react'
+import Navbar from '../components/Navbar/Navbar'
+import Footer from '../components/Footer/Footer'
 
-const mProcedure = () => {
+const mProcedure = ({children}) => {
   return (
-    <div>mProcedure</div>
+    <>
+    <div>medical procedure</div>
+    <Navbar buttonText="Check Mail"/>
+    <main>{children}</main>
+    <Footer />
+  </>
   )
 }
 

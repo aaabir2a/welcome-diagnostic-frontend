@@ -2,16 +2,20 @@ import React from 'react'
 import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer/Footer'
 
-const fitness = ({children}) => {
+export const metadata = {
+    title: 'Services - Ibn Omar Medical Center',
+    description: 'Explore our range of trusted medical services.',
+  };
+
+const layout = ({children}) => {
   return (
     <>
       
     <Navbar buttonText="Check Mail"/>
-    <div>fitness</div>
     <main>{children}</main>
     <Footer />
   </>
   )
 }
 
-export default fitness
+export default layout

@@ -14,7 +14,7 @@ import mProcedure from './medical-procedure/page';
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
-  const customLayoutPages = ['/about', '/m-services', '/contact','/fitness-criteria','/medical-mProcedure'];
+  const customLayoutPages = ['/about', '/m-services', '/contact','/fitness-criteria','/medical-Procedure','/check-report'];
   const isCustomLayoutPage = customLayoutPages.includes(pathname);
   return (
 
@@ -24,9 +24,9 @@ export default function RootLayout({ children }) {
 
         
       <Address />
-      {!isCustomLayoutPage && <Navbar />} {/* Only render Navbar if not on custom layout pages */}
+      {!isCustomLayoutPage && <Navbar />} 
         <main>{children}</main>
-        {!isCustomLayoutPage && <Footer />} {/* Only render Footer if not on custom layout pages */}
+        {!isCustomLayoutPage && <Footer />} 
 
         
       </body>

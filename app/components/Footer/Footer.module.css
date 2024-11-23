@@ -1,0 +1,18 @@
+.Footer {
+    background-color: #87ceeb; /* Sky blue background */
+    color: #000; /* Black text */
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 14px;
+  }
+
+  .Footer a {
+    color: #000; /* Black text for links */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .Footer a:hover {
+    color: #007bff; /* Add a hover effect for footer links */
+  }

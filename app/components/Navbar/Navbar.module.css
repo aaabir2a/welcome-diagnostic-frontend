@@ -1,7 +1,12 @@
 /* Navbar background */
 .navbar {
-  background-color: #f8f9fa !important; /* Light background color */
-  border-bottom: 1px solid #ddd; /* Optional: adds a subtle bottom border */
+  background-color: #87ceeb; /* Sky blue background */
+  color: #000; /* Black text */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
 }
 
 /* Styling for the navbar brand */
@@ -31,9 +36,18 @@
   color: #007bff !important; /* Bootstrap's primary blue */
 }
 
+
 /* Button inside the navbar */
-.navButton {
-  font-size: 0.9rem;
-  padding: 8px 16px;
-  border-radius: 5px;
+.btn {
+  background-color: lightblue; /* Initial background color */
+  color: white;               /* Initial text color */
+  border: 2px solid blue;     /* Border color */
+  border-radius: 10px;        /* Rounded corners */
+  padding: 10px 20px;         /* Adjust padding */
+  transition: all 0.3s ease;  /* Smooth transition on hover */
+}
+
+.btn:hover {
+  background-color: blue;    /* Background turns blue on hover */
+  color: black;               /* Text color turns black on hover */
 }

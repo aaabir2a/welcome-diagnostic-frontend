@@ -1,8 +1,15 @@
 import React from 'react'
+import Navbar from '../components/Navbar/Navbar'
+import Footer from '../components/Footer/Footer'
 
-const contact = () => {
+const contact = ({children}) => {
   return (
-    <div>contact</div>
+    <>
+      {/* Pass a custom button text for the Navbar */}
+      <Navbar buttonText="Check Mail" />
+      <main>{children}</main>
+      <Footer />
+    </>
   )
 }
 
