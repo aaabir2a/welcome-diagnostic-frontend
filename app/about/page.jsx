@@ -19,7 +19,7 @@ export default function About() {
         <div className={styles.content}>
           <h2>Why Choose Us</h2>
           <p>
-            Ibn Omar Medical & Diagnostic Center is run by a group of skilled
+            Welcome Medical & Diagnostic Center is run by a group of skilled
             professionals and administrators with vast experience & expertise
             in their respective fields. The name of the organization implies
             its commitments and nature of jobs it can perform. It is designed

@@ -10,8 +10,8 @@ export default function AboutUs() {
             <Image
               src='/about-us.png'
               alt="About Us"
-              width={500} // Set the image width
-              height={300} // Set the image height
+              width={500} 
+              height={300} 
               className={styles.image}
             />
           </div>
@@ -20,7 +20,7 @@ export default function AboutUs() {
               Modern And Trusted Medical & Diagnostic Center
             </h2>
             <p>
-              Ibn Omar Medical & Diagnostic Center is run by skilled
+              Welcome Medical & Diagnostic Center is run by skilled
               professionals with vast expertise. It is designed to meet
               international health security requirements.
             </p>

@@ -1,7 +1,7 @@
-/* Navbar background */
+
 .navbar {
-  background-color: #87ceeb; /* Sky blue background */
-  color: #000; /* Black text */
+  background-color: #87ceeb; 
+  color: #000; 
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -9,45 +9,45 @@
   
 }
 
-/* Styling for the navbar brand */
+
 .navbar-brand {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #000000 !important; /* Black text color */
+  color: #000000 !important; 
 }
 
-/* Adjust link styles */
+
 .nav-link {
   font-size: 1rem;
   margin-right: 15px;
-  color: #000000 !important; /* Black text color */
+  color: #000000 !important; 
   transition: font-weight 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-/* Hover effect for nav links */
+
 .nav-link:hover {
   font-weight: bold;
-  color: #000000 !important; /* Keep black text but make it bold */
+  color: #000000 !important; 
 }
 
-/* Active link styling */
+
 .nav-link.active {
   font-weight: bold;
-  color: #007bff !important; /* Bootstrap's primary blue */
+  color: #007bff !important; 
 }
 
 
-/* Button inside the navbar */
+
 .btn {
-  background-color: lightblue; /* Initial background color */
-  color: black;               /* Initial text color */
-  border: 2px solid blue;     /* Border color */
-  border-radius: 10px;        /* Rounded corners */
-  padding: 10px 20px;         /* Adjust padding */
-  transition: all 0.3s ease;  /* Smooth transition on hover */
+  background-color: lightblue; 
+  color: black;               
+  border: 2px solid blue;     
+  border-radius: 10px;        
+  padding: 10px 20px;         
+  transition: all 0.3s ease;  
 }
 
 .btn:hover {
-  background-color: blue;    /* Background turns blue on hover */
-  color: black;               /* Text color turns black on hover */
+  background-color: blue;    
+  color: black;               
 }

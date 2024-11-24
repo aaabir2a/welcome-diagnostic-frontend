@@ -8,10 +8,10 @@ const Hero = () => {
       <div className={styles.content}>
         <p className={styles.subtitle}>WELCOME TO</p>
         <h1 className={styles.title}>
-          IBN OMAR MEDICAL AND DIAGNOSTIC CENTER
+          Welcome MEDICAL AND DIAGNOSTIC CENTER
         </h1>
         <h2 className={styles.subtext}>
-          ইবনে ওমর মেডিক্যাল এন্ড ডায়াগনস্টিক সেন্টার
+          WELCOME মেডিক্যাল এন্ড ডায়াগনস্টিক সেন্টার
         </h2>
         <p className={styles.description}>Smart Steps to Health</p>
         <div className={styles.buttons}>

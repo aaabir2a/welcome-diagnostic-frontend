@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer/Footer'
 
 export const metadata = {
-    title: 'Services - Ibn Omar Medical Center',
+    title: 'Services - WelcomeMedical Center',
     description: 'Explore our range of trusted medical services.',
   };
 
