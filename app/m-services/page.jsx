@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer/Footer'
 import Image from 'next/image'
-import styles from "./service.module.css";
+import styles from "./service.module.scss";
 
 
 
@@ -19,7 +19,7 @@ const mServices = () => {
             height={400}
             className={styles.serviceImage}
           />
-          {/* <div className={styles.experienceBadge}>7 YEARS OF EXPERIENCE</div> */}
+          <div className={styles.experienceBadge}>7 YEARS OF EXPERIENCE</div>
         </div>
 
         {/* Right Section: Text Content */}

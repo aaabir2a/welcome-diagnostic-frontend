@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
-import styles from './layout.module.css';
+import styles from './layout.module.scss';
 
 export const metadata = {
   title: 'About Us - Welcome Medical & Diagnostic Center',

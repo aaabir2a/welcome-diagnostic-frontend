@@ -1,5 +1,5 @@
 import Image from 'next/image'; // Import Next.js Image component
-import styles from './AboutUs.module.css';
+import styles from './AboutUs.module.scss';
 
 export default function AboutUs() {
   return (

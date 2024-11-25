@@ -1,6 +1,6 @@
 // "use client";
 import Link from "next/link";
-import styles from "./Navbar.module.css";
+import styles from "./Navbar.module.scss";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Navbar = ({ buttonText = "Check Report" }) => {

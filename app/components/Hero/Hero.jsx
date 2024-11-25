@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./Hero.module.css";
+import styles from "./Hero.module.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Hero = () => {
