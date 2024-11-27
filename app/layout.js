@@ -6,13 +6,8 @@ import Footer from "./components/Footer/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Hero from "./components/Hero/Hero";
 import ScrollUp from "./components/ScrollUp/ScrollUp";
-<head>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-    rel="stylesheet"
-  />
-</head>
 import 'bootstrap-icons/font/bootstrap-icons.css';
+// import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 
 export default function RootLayout({ children }) {

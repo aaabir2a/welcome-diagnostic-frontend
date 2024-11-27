@@ -1,11 +1,17 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./layout.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
 import Image from "next/image";
 
+
+
 const mpage = () => {
+  useEffect(() => {
+    // Dynamically import Bootstrap JS because it relies on the DOM
+    import("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
   return (
     <div>
       <div className={`header ${styles.header}`}>
