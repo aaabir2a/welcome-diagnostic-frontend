@@ -8,10 +8,10 @@ import Image from "next/image";
 
 
 const mpage = () => {
-  useEffect(() => {
-    // Dynamically import Bootstrap JS because it relies on the DOM
-    import("bootstrap/dist/js/bootstrap.bundle.min.js");
-  }, []);
+  // useEffect(() => {
+  //   // Dynamically import Bootstrap JS because it relies on the DOM
+  //   import("bootstrap/dist/js/bootstrap.bundle.min.js");
+  // }, []);
   return (
     <div>
       <div className={`header ${styles.header}`}>
