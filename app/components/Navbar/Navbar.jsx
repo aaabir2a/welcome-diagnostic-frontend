@@ -1,9 +1,12 @@
-// "use client";
+"use client";
 import Link from "next/link";
 import styles from "./Navbar.module.scss";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { usePathname, useParams  } from 'next/navigation'
 
-const Navbar = ({ buttonText = "Check Report" }) => {
+const Navbar = ({ buttonText = "Checks Report" }) => {
+  const pathname = usePathname();
+  
     return (
         <nav className={`navbar navbar-expand-lg navbar-light sticky-top ${styles.navbar}`}>
           <div className="container">
@@ -41,7 +44,12 @@ const Navbar = ({ buttonText = "Check Report" }) => {
                 </li>
               </ul>
               <Link href="/check-report">
-          <button className={`btn btn-outline-primary ms-3 ${styles.btn} `}>{buttonText}</button>
+              {
+                pathname === '/' ? (<button className={`btn btn-outline-primary ms-3 ${styles.btn} `}>Checks Mail</button>) : (
+                  <button className={`btn btn-outline-primary ms-3 ${styles.btn} `}>Checks Report</button>
+                )
+              }
+          
         </Link>
             </div>
           </div>

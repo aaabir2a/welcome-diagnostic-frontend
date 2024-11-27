@@ -6,10 +6,8 @@ const checkReport = ({children}) => {
   return (
     <>
       
-    <Navbar buttonText="Check Mail"/>
+    
     <div>report</div>
-    <main>{children}</main>
-    <Footer />
   </>
   )
 }
