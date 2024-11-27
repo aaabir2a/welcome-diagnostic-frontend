@@ -1,18 +1,43 @@
-.Footer {
-    background-color: #87ceeb;
-    color: #000; 
-    text-align: center;
-    padding: 15px 10px;
-    font-size: 14px;
+// components/Footer.module.scss
+
+.footer {
+  background-color: #5d7bf3;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+
+  .footer-section {
+    margin-bottom: 20px;
   }
 
-  .Footer a {
-    color: #000; 
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+  .footer-section h3 {
+    margin-top: 0;
   }
-  
-  .Footer a:hover {
-    color: #007bff; 
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+        color: #ccc;
+      }
+    }
   }
+
+  .footer-address {
+    margin-bottom: 20px;
+  }
+
+  .footer-contact {
+    margin-bottom: 20px;
+  }
+}
