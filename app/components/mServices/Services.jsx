@@ -1,42 +1,50 @@
-import Image from 'next/image';
-import styles from './Services.module.scss';
+import Image from "next/image";
+import styles from "./Services.module.scss";
 
 export default function Services() {
   const services = [
     {
       id: 1,
-      title: 'Advanced Technology',
-      text: 'We use cutting-edge technology for accurate diagnoses and treatments.',
-      image: '/service-1.png',
+      title: "Advanced Technology",
+      text: "We use cutting-edge technology for accurate diagnoses and treatments.",
+      image: "/service-1.png",
     },
     {
       id: 2,
-      title: 'Professional Staff',
-      text: 'Our medical professionals are highly experienced and skilled.',
-      image: '/service-2.png',
+      title: "Professional Staff",
+      text: "Our medical professionals are highly experienced and skilled.",
+      image: "/service-2.png",
     },
     {
       id: 3,
-      title: 'Comprehensive Health Checks',
-      text: 'We provide a range of health check packages tailored to your needs.',
-      image: '/service-3.png',
+      title: "Comprehensive Health Checks",
+      text: "We provide a range of health check packages tailored to your needs.",
+      image: "/service-3.png",
     },
   ];
 
   return (
-    <section className={styles.servicesSection}>
-      <h2 className={styles.servicesHeader}>We Are Trusted For Our Services</h2>
-      <div className={styles.cardContainer}>
-        {services.map((service) => (
-          <div key={service.id} className={styles.card}>
-            <Image src={service.image} alt={service.title} width={500} height={500}  />
-            <div className={styles.cardContent}>
-              <h3 className={styles.cardTitle}>{service.title}</h3>
-              <p className={styles.cardText}>{service.text}</p>
+    <div>
+      <div className="container">
+        <div className="row">
+          {services.map((service) => (
+            <div className="col-md-4 mb-4" key={service.id}>
+              <div className={`card h-100 hover-effect ${styles[`hover-effect`]}`}>
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  className="card-img-top"
+                  width={300} height={400}
+                />
+                <div className="card-body text-center">
+                  <h5 className="card-title">{service.title}</h5>
+                  <p className="card-text">{service.text}</p>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </section>
+    </div>
   );
 }
