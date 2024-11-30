@@ -1,108 +1,56 @@
+.BGimage{
+  background: url('/bg.jpg');
+  background-size: cover; 
+  background-position: center; 
+  margin: 0; 
+  overflow: hidden; 
+  height: 300px; 
+  width: 100vw;
+  position: relative;
 
-$container-padding: 20px;
-$container-margin: 20px;
-$shadow-color: rgba(3, 70, 164, 0.2);
-$shadow-blur: 10px;
-$shadow-offset: 2px;
-$coldiv-padding: 30px;
+}
 
-.container {
-  padding: $container-padding;
-  // margin: $container-margin auto; // Centers the container horizontally
-  // max-width: 800px; // Optional: Limit container width
-  // box-shadow: $shadow-offset $shadow-offset $shadow-blur $shadow-color; // Add shadow
-  // border-radius: 8px; // Optional: Add rounded corners
-  // background-color: #ffffff; // Optional: Add a background color
+.hover-effect {
+  transition: all 0.3s ease-in-out; // Smooth transition for hover effects
 
-  // Center vertically
-  // position: absolute;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
+  &:hover {
+    // background-color: #007bff; // Bootstrap primary color
+    color: rgb(4, 1, 16); // Change text color on hover
+    // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Add shadow
+    transform: translateY(-4px); // Slightly lift the column
+  }
+}
 
-  }
-  
-  .row {
-    margin: 0;
-    padding: 20px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+/* Numbered Steps */
+.step-number {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+}
 
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
-  
-  }
-  
-  .col-md-6 {
-    padding: 30px;
-    box-shadow: $shadow-offset $shadow-offset $shadow-blur $shadow-color;;
-    border-radius: 8px;
-    position: relative;
-  }
-  .abc{
-    background-color: blue;
-  }
-  .coldiv{
-    padding: $coldiv-padding;
-    flex-direction: column;
-    // display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-  }
-  .imgDiv{
-    padding: $coldiv-padding;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    object-fit: contain;
-    overflow: hidden;
-  }
+/* Accordion Button Styling */
+.accordion-button {
+  font-size: 1rem;
+  font-weight: bold;
 
-  .accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
+  &:focus {
+    box-shadow: none;
   }
-  .active, .accordion:hover {
-    background-color: #ccc;
-  }
-  .panel {
-    padding: 0 18px;
-    background-color: rgb(17, 12, 12);
-    display: none;
-    overflow: hidden;
-  }
+}
 
-  .header{
-    display: grid; 
-    place-items: center; 
-    padding-top: 40px;
-    
-    
-  }
+.accordion-button:not(.collapsed) {
+  color: #007bff;
+  background-color: rgba(0, 123, 255, 0.1); /* Light blue background */
+}
 
-  .h5header{
-    color: blue;
-    font-weight: bold;
-  }
-
-  .h2header{
-    font-weight: bold;
-  }
-
-  .responsiveImg {
-    
-    width: 100%;
-    height: 100%;
-    background: url("/service-3.png") no-repeat center center/cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+.accordion-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+}

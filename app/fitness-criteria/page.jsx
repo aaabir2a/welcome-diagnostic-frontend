@@ -12,88 +12,112 @@ import Image from "next/image";
 const fitness = ({ children }) => {
   return (
     <>
-      <div>
+      <div className="heroSection">
         <div
-          className={`bgDiv d-flex align-items-center justify-content-center ${styles.bgDiv}`}
+          className={`bg-image position-relative d-flex align-items-center justify-content-center text-white ${styles.BGimage}`}
         >
-          <div className={`content text-center ${styles.content}`}>
-            <h2 className="text-white mb-4">Medical Fitness Criteria</h2>
-            <div>
-              <p>
-                <Link href="/">Home</Link> / About
-              </p>
+          {/* White shader overlay */}
+          <div
+            className="position-absolute w-100 h-100"
+            style={{
+              backgroundColor: "rgba(255, 255, 255, 0.5)",
+              top: 0,
+              left: 0,
+            }}
+          ></div>
+
+          <div className="container text-center position-relative">
+            <h1 className="display-4 fw-bold text-black">About Us</h1>
+            <p className={`fs-4 fs-md-5 text-black fw-bold`}>
+              <Link href="/" className={`${styles[`hover-effect`]}`}>
+                Home
+              </Link>
+              / About
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="middleSection">
+        <div className="container pt-5 pb-5">
+          <div className="row">
+            <div className="col-md-6">
+            <div className={`${styles[`hover-effect`]}`}>
+              <Image
+                src="/service-3.png" // Replace with your image path
+                alt="Building"
+                width={600}
+                height={600}
+              />
+              </div>
+            </div>
+
+            <div className="col-md-6 ">
+              <div className={`${styles[`hover-effect`]}`}>
+                <h6 class="text-primary">FITNESS CRITERIA</h6>
+                <h2 class="fw-bold">A Leading Light in Healthcare</h2>
+                <p class="mt-3">
+                  SUBJECT WITH THE FOLLOWING DISEASES ARE CONSIDERED UNFIT TO
+                  WORK IN ANY COUNTRY
+                </p>
+                <h5 class="fw-bold text-decoration-underline">
+                  Infectious Diseases:
+                </h5>
+                <ul class="list-unstyled mt-3">
+                  <li class="d-flex align-items-start mb-2">
+                    <i class="fa-solid fa-circle-check text-primary me-2"></i>
+                    <span>HIV AIDS Reactive</span>
+                  </li>
+                  <li class="d-flex align-items-start mb-2">
+                    <i class="fa-solid fa-circle-check text-primary me-2"></i>
+                    <span>
+                      Hepatitis B Surface Antigen Positive And Anti HCV
+                    </span>
+                  </li>
+                  <li class="d-flex align-items-start mb-2">
+                    <i class="fa-solid fa-circle-check text-primary me-2"></i>
+                    <span>
+                      Microfilaria Positive & Malaria Blood Film Positive
+                    </span>
+                  </li>
+                  <li class="d-flex flex-column mb-2">
+                    <div class="d-flex align-items-start">
+                      <i class="fa-solid fa-circle-check text-primary me-2"></i>
+                      <span>Tuberculosis – Any Type</span>
+                    </div>
+                    <ul class="list-unstyled ms-4">
+                      <li>
+                        A- Pulmonary By Chest X-Ray Showing Active Or Past
+                        Evidence Of Old T.B. Including Minimum Fibrosis,
+                        Calcification And Pleural Thickening
+                      </li>
+                      <li>B- Tuberculosis Pleural Effusion</li>
+                      <li>C- Tuberculosis Lymphadenitis</li>
+                    </ul>
+                  </li>
+                  <li class="d-flex align-items-start">
+                    <i class="fa-solid fa-circle-check text-primary me-2"></i>
+                    <span>
+                      Venereal Diseases, VDRL Positive And TPHA Positive
+                    </span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div className="">
-        <p></p>
-      </div>
-      <div className={`container ${styles.container}`}>
-        <div className={"row"}>
-          <div className={`col-md-6 ${styles[`col-md-6`]}`}>
-            {/* Left Section: Image */}
-            <div className={styles.imageContainer}>
-              <Image
-                src="/service-1.png"
-                alt="Service Building"
-                width={600}
-                height={400}
-                className={styles.serviceImage}
-              />
-              <div className={styles.experienceBadge}>
-                7 YEARS OF EXPERIENCE
-              </div>
-            </div>
-          </div>
-          <div className={`col-md-6 ${styles[`col-md-6`]}`}>
-            <div className={styles.container}>
-              <h6 className="text-primary">FITNESS CRITERIA</h6>
-              <h1 className="fw-bold">A Leading Light in Healthcare</h1>
-              <p className="text-secondary">
-                SUBJECT WITH THE FOLLOWING DISEASES ARE CONSIDERED UNFIT TO WORK
-                IN ANY COUNTRY
-              </p>
-
-              <h4 className="mt-4">Infectious Diseases:</h4>
-              <ul className={styles.diseaseList}>
-                <li className={styles.listItem}>
-                  <i className="fa-solid fa-circle-check text-primary me-2"></i>
-                  HIV AIDS Reactive
-                </li>
-                <li className={styles.listItem}>
-                  <i className="fa-solid fa-circle-check text-primary me-2"></i>
-                  Hepatitis B Surface Antigen Positive And Anti HCV
-                </li>
-                <li className={styles.listItem}>
-                  <i className="fa-solid fa-circle-check text-primary me-2"></i>
-                  Microfilaria Positive & Malaria Blood Film Positive
-                </li>
-                <li className={styles.listItem}>
-                  <i className="fa-solid fa-circle-check text-primary me-2"></i>
-                  <strong>Tuberculosis – Any Type</strong>
-                  <ul className={styles.subList}>
-                    <li className={styles.subListItem}>
-                      A - Pulmonary By Chest X-Ray Showing Active Or Past
-                      Evidence Of Old T.B. Including Minimum Fibrosis,
-                      Calcification, And Pleural Thickening
-                    </li>
-                    <li className={styles.subListItem}>
-                      B - Tuberculosis Pleural Effusion
-                    </li>
-                    <li className={styles.subListItem}>
-                      C - Tuberculosis Lymphadenitis
-                    </li>
-                  </ul>
-                </li>
-                <li className={styles.listItem}>
-                  <i className="fa-solid fa-circle-check text-primary me-2"></i>
-                  Venereal Diseases, VDRL Positive And TPHA Positive
-                </li>
-              </ul>
-            </div>
-          </div>
+      <div className="map">
+        <h2>Our Location</h2>
+        <div className={styles.mapContainer}>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=..."
+            width="100%"
+            height="450"
+            style={{ border: "0" }}
+            allowFullScreen=""
+            loading="lazy"
+            title="Google Map"
+          ></iframe>
         </div>
       </div>
     </>

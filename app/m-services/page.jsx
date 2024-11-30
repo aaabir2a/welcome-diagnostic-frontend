@@ -8,36 +8,83 @@ import styles from "./service.module.scss";
 
 const mServices = () => {
   return (
-    <div className={styles.serviceSection}>
-      <div className={styles.serviceContainer}>
-        {/* Left Section: Image */}
-        <div className={styles.imageContainer}>
+    <>
+    <div className="container pt-5 pb-5">
+      <div className="row align-items-center">
+        {/* Left Image Section */}
+        <div className="col-md-6">
           <Image
-            src="/service-1.png"
-            alt="Service Building"
-            width={600}
-            height={400}
-            className={styles.serviceImage}
+            src="/service-3.png" // Replace with your image path
+            alt="Building"
+            className="img-fluid rounded"
+            width={500}
+            height={500}
           />
-          <div className={styles.experienceBadge}>7 YEARS OF EXPERIENCE</div>
+          <div className={`experience-badge bg-primary text-white ${styles[`experience-badge`]}`}>
+            7 YEARS OF EXPERIENCE
+          </div>
         </div>
 
-        {/* Right Section: Text Content */}
-        <div className={styles.contentContainer}>
-          <h3 className={styles.title}>SERVICES</h3>
-          <h2 className={styles.subtitle}>
+        {/* Right Content Section */}
+        <div className="col-md-6">
+          <h5 className="text-primary">SERVICES</h5>
+          <h2 className="fw-bold">
             Industry Leading Technology Enhances Health
           </h2>
-          <ul className={styles.featuresList}>
-            <li>Clinical Laboratory Investigations With Professional Technologists And Materials.</li>
-            <li>Radiology And Imaging Services With Modern Machineries And Materials.</li>
-            <li>Reporting And Recording With Utmost Care And Accuracy Using Modern Tools.</li>
-            <li>Comprehensive And Complete Physical And Mental Check-Up Facilities With Full Care And Counseling.</li>
+          <ul className="list-unstyled mt-4">
+            <li className="d-flex align-items-start mb-3">
+              <i className="fas fa-check-circle text-primary me-3"></i>
+              <span>
+                Clinical Laboratory Investigations With Professional Technologist
+                And Materials.
+              </span>
+            </li>
+            <li className="d-flex align-items-start mb-3">
+              <i className="fas fa-check-circle text-primary me-3"></i>
+              <span>
+                Radiology And Imaging Services With Modern Machineries And
+                Materials.
+              </span>
+            </li>
+            <li className="d-flex align-items-start mb-3">
+              <i className="fas fa-check-circle text-primary me-3"></i>
+              <span>
+                Reporting And Recording With Utmost Care And Accuracy Using
+                Modern Tools.
+              </span>
+            </li>
+            <li className="d-flex align-items-start mb-3">
+              <i className="fas fa-check-circle text-primary me-3"></i>
+              <span>
+                Comprehensive And Complete Physical And Mental Check-Up
+                Facilities With Full Care And Counseling.
+              </span>
+            </li>
           </ul>
-          <button className={styles.aboutButton}>About Us</button>
+          <button className={`btn btn-primary btn-hover mt-4 ${styles[`btn-hover`]}`}>About Us</button>
         </div>
       </div>
+      
+      
     </div>
+    <div className="map">
+      <h2>Our Location</h2>
+        <div className={styles.mapContainer}>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=..."
+            width="100%"
+            height="450"
+            style={{ border: "0" }}
+            allowFullScreen=""
+            loading="lazy"
+            title="Google Map"
+          ></iframe>
+        </div>
+      
+    
+      </div>
+    </>
+    
   
   )
 }
