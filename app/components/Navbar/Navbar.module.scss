@@ -10,3 +10,14 @@
   width: 100%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.hover-effect {
+  transition: all 0.3s ease-in-out; // Smooth transition for hover effects
+
+  &:hover {
+    // background-color: #007bff; // Bootstrap primary color
+    color: rgb(55, 8, 244); // Change text color on hover
+    // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Add shadow
+    transform: translateY(-4px); // Slightly lift the column
+  }
+}

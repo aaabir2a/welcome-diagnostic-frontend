@@ -1,11 +1,14 @@
 import Image from "next/image";
 import styles from "./Hero.module.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from "../Navbar/Navbar";
 
 const Hero = () => {
   return (
+    
     <div className={styles.hero}>
       <div className={styles.content}>
+        
         <p className={styles.subtitle}>WELCOME TO</p>
         <h1 className={styles.title}>
           Welcome MEDICAL AND DIAGNOSTIC CENTER
