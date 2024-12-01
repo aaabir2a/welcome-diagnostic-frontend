@@ -1,53 +1,12 @@
-
 .navbar {
-  background-color: #87ceeb; 
-  color: #000; 
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background-color: #ffffff; /* Adjust for your theme */
+  transition: all 0.3s ease-in-out;
 }
 
-
-.navbar-brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #000000 !important; 
-}
-
-
-.nav-link {
-  font-size: 1rem;
-  margin-right: 15px;
-  color: #000000 !important; 
-  transition: font-weight 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-
-.nav-link:hover {
-  font-weight: bold;
-  color: #000000 !important; 
-}
-
-
-.nav-link.active {
-  font-weight: bold;
-  color: #007bff !important; 
-}
-
-
-
-.btn {
-  background-color: lightblue; 
-  color: black;               
-  border: 2px solid blue;     
-  border-radius: 10px;        
-  padding: 10px 20px;         
-  transition: all 0.3s ease;  
-}
-
-.btn:hover {
-  background-color: blue;    
-  color: black;               
+.navbar-scrolled {
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

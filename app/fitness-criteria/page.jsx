@@ -4,10 +4,7 @@ import Footer from "../components/Footer/Footer";
 import styles from "./layout.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  rel="stylesheet"
-/>;
+
 
 const fitness = ({ children }) => {
   return (
@@ -27,20 +24,20 @@ const fitness = ({ children }) => {
           ></div>
 
           <div className="container text-center position-relative">
-            <h1 className="display-4 fw-bold text-black">About Us</h1>
+            <h1 className="display-4 fw-bold text-black">Medical Fitness Criteria</h1>
             <p className={`fs-4 fs-md-5 text-black fw-bold`}>
               <Link href="/" className={`${styles[`hover-effect`]}`}>
                 Home
               </Link>
-              / About
+              / Fitness Criteria
             </p>
           </div>
         </div>
       </div>
-      <div className="middleSection">
+    
         <div className="container pt-5 pb-5">
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-6">
             <div className={`${styles[`hover-effect`]}`}>
               <Image
                 src="/service-3.png" // Replace with your image path
@@ -51,7 +48,7 @@ const fitness = ({ children }) => {
               </div>
             </div>
 
-            <div className="col-md-6 ">
+            <div className="col-6 ">
               <div className={`${styles[`hover-effect`]}`}>
                 <h6 class="text-primary">FITNESS CRITERIA</h6>
                 <h2 class="fw-bold">A Leading Light in Healthcare</h2>
@@ -105,7 +102,7 @@ const fitness = ({ children }) => {
             </div>
           </div>
         </div>
-      </div>
+    
       <div className="map">
         <h2>Our Location</h2>
         <div className={styles.mapContainer}>

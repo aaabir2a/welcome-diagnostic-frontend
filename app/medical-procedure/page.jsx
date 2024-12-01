@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Image from "next/image";
 import Link from "next/link";
 
-const mpage = () => {
+const Mpage = () => {
   const steps = [
     {
       title: "MANPOWER PASSENGERS",
@@ -83,12 +83,12 @@ const mpage = () => {
           ></div>
 
           <div className="container text-center position-relative">
-            <h1 className="display-4 fw-bold text-black">About Us</h1>
+            <h1 className="display-4 fw-bold text-black">Procedure</h1>
             <p className={`fs-4 fs-md-5 text-black fw-bold`}>
               <Link href="/" className={`${styles[`hover-effect`]}`}>
                 Home
               </Link>
-              / About
+              / Procedure
             </p>
           </div>
         </div>
@@ -162,4 +162,4 @@ const mpage = () => {
   );
 };
 
-export default mpage;
+export default Mpage;
