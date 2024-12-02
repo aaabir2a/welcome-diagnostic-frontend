@@ -1,6 +1,5 @@
 import Image from "next/image"; // Import Next.js Image component
 import styles from "./AboutUs.module.scss";
-import About from "./../../about/page";
 import Link from "next/link";
 
 export default function AboutUs() {

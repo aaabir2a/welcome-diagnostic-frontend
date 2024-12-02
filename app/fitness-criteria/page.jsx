@@ -1,6 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
 import styles from "./layout.module.scss";
 import Link from "next/link";
 import Image from "next/image";
