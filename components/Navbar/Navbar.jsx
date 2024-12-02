@@ -45,7 +45,7 @@ export default function Navbar({ buttonText = "Checks Report", menusData }) {
       case "Profile":
         return "/medical-procedure";
       case "Clients":
-        return "/fitness-criteria";
+        return "/m-services";
       case "Message":
         return "/fitness-criteria";
       case "Gallery":
@@ -77,7 +77,7 @@ export default function Navbar({ buttonText = "Checks Report", menusData }) {
         }}
       >
         {/* Logo */}
-        <Link href="/" className="navbar-brand">
+        <Link href="/" className={`navbar-brand ${styles[`navbar-brand`]}`}>
           <Image src="/logo.jpg" alt="Logo" height={100} width={200} />
         </Link>
 
@@ -91,16 +91,16 @@ export default function Navbar({ buttonText = "Checks Report", menusData }) {
         </button>
 
         {/* Navbar Links */}
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
-            {menus.length > 0 ? (
-              menus.map((menu) => (
-                <li key={menu.id} className="nav-item">
+        <div className={`collapse navbar-collapse justify-content-center id="navbarNav ${styles.navbar}`}>
+          <ul className={`navbar-nav me-auto mb-2 mb-lg-0 fw-bold ${styles[`navbar-nav`]}`}>
+            {menus?.length > 0 ? (
+              menus?.map((menu) => (
+                <li key={menu?.id} className="nav-item">
                   <Link
-                    href={getPagePath(menu.name)}
+                    href={getPagePath(menu?.name)}
                     className={`nav-link active ${styles[`hover-effect`]}`}
                   >
-                    {menu.name}
+                    {menu?.name}
                   </Link>
                 </li>
               ))

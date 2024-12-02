@@ -2,13 +2,25 @@
   position: sticky;
   top: 0;
   z-index: 1030;
-  background-color: #ffffff; /* Adjust for your theme */
+  // background-color: #ffffff; /* Adjust for your theme */
   transition: all 0.3s ease-in-out;
 }
 
 .navbar-scrolled {
   width: 100%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-scrolled .navbar-brand {
+  transform: scale(0.8); /* Shrinks the logo on scroll */
+}
+
+.navbar-nav {
+  margin: auto; /* Keeps menu items centered */
 }
 
 .hover-effect {
