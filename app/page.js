@@ -4,14 +4,18 @@ import Hero from "@/components/Hero/Hero";
 import AboutUs from "@/components/AboutUs/AboutUs";
 import Services from "@/components/mServices/Services";
 import ContactUs from "@/components/ContactUs/ContactUs";
+import { GET_SLIDERSETTINGS } from "@/constant/constant";
+import { dataFetcher } from "@/utils/dataFetcher";
 
 
 
-export default function Home() {
+export default async function Home({props}) {
+  const data = await dataFetcher(GET_SLIDERSETTINGS);
+  const sliderIamge = data?.homepage_sliders;
   return (
     <main>
      
-      <Hero/>
+      <Hero sliderIamge={sliderIamge}/>
       <AboutUs/>
       <Services/>
       <ContactUs/>

@@ -12,6 +12,9 @@ export default function Navbar({ buttonText = "Checks Report", menusData }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(true);
   const [menus, setMenus] = useState(menusData);
+  // menus.slice(0, 6).forEach((menus) => console.log("Menu ID:", menus.id));
+
+  
 
   // useEffect(() => {
   //   async function getMenu() {
@@ -38,15 +41,15 @@ export default function Navbar({ buttonText = "Checks Report", menusData }) {
         return "/";
       case "About":
         return "/about";
-      case "Contact":
+      case "Contact Us":
         return "/contact";
-      case "Service":
+      case "Services":
         return "/m-services";
-      case "Profile":
+      case "Medical Procedure":
         return "/medical-procedure";
       case "Clients":
         return "/m-services";
-      case "Message":
+      case "Fitness Criteria":
         return "/fitness-criteria";
       case "Gallery":
         return "/fitness-criteria";
@@ -94,7 +97,7 @@ export default function Navbar({ buttonText = "Checks Report", menusData }) {
         <div className={`collapse navbar-collapse justify-content-center id="navbarNav ${styles.navbar}`}>
           <ul className={`navbar-nav me-auto mb-2 mb-lg-0 fw-bold ${styles[`navbar-nav`]}`}>
             {menus?.length > 0 ? (
-              menus?.map((menu) => (
+              menus?.slice(0, 6)?.map((menu) => (
                 <li key={menu?.id} className="nav-item">
                   <Link
                     href={getPagePath(menu?.name)}

@@ -17,6 +17,8 @@ import { GET_MENUS_ALL_NESTED } from "@/constant/constant";
 export default async function RootLayout({ children }) {
   const data = await dataFetcher(GET_MENUS_ALL_NESTED);
   const menusData = data?.menus;
+
+  
   
   return (
     <html lang="en">
