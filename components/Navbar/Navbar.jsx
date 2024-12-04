@@ -27,6 +27,14 @@ export default function Navbar({ buttonText = "Checks Report", menusData }) {
   //   getMenu();
   // }, []);
 
+
+    // if (pathname === "/") {
+    //   const homeMenu = menus?.find((menu) => menu?.name === "Home");
+    //   if (homeMenu) {
+    //     console.log("Home Menu ID:", homeMenu?.id);
+    //   }
+    // }
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);

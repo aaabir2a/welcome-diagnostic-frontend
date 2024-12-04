@@ -1,13 +1,12 @@
-"use client"
+
 import Image from "next/image";
 import styles from "./Hero.module.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "../Navbar/Navbar";
-import { useState } from "react";
 import { BASE_URL } from "@/constant/constant";
 
 const Hero = ({sliderIamge}) => {
-  const [slider, setSlider] = useState(sliderIamge);
+  const slider = sliderIamge;
   const backgroundImageUrl = slider[0]?.image
     ? `${BASE_URL}${slider[4].image}`
     : "/bg.jpg";
