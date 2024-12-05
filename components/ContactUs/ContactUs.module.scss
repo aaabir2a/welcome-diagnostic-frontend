@@ -1,24 +1,34 @@
 .chooseUs {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    background-image: url('/contact-us-bg.jpg'); /* Default background image */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s ease-in-out;
-  }
-  
-  .chooseUs:hover {
-    background-image: url('/contact-us-bg-hover.jpg'); /* Hover background image */
-  }
-  
-  .content {
-    color: white;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-  }
-  
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease-in-out;
 
-  
+  &:hover .chooseUsHover {
+    opacity: 1;
+  }
+}
+
+.chooseUsHover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.content {
+  position: relative;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  z-index: 1; /* Ensure content is above hover background */
+}

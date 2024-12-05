@@ -6,7 +6,7 @@ import { BASE_URL } from "@/constant/constant";
 export default function AboutUs({ menusData, homeId, aboutContent, aboutImage }) {
   console.log("Menus Data:", menusData);
   console.log("Home Menu ID:", homeId);
-  console.log("About Content:", aboutContent);
+  console.log("Aboutbgf Content:", aboutContent);
   console.log("About Image:", aboutImage);
 
   return (
@@ -15,10 +15,10 @@ export default function AboutUs({ menusData, homeId, aboutContent, aboutImage })
       <div className="col-md-6">
         {aboutImage ? (
           <Image
-            src={`${aboutImage}`}
+            src={aboutImage}
             alt="About Us"
-            width={500}
-            height={300}
+            width={400}
+            height={400}
             className={styles.image}
           />
         ) : (
