@@ -1,42 +1,29 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./layout.module.scss";
+import { useContext } from "react";
+import { AboutContext } from "./aboutprovider";
+import HeroSection from "@/components/HeroSection/HeroSection";
 
 export default function About() {
+  // Access context data
+  const { aboutContent, aboutImage } = useContext(AboutContext);
+  console.log("aboutiii content", aboutContent);
+  console.log("aboutiii image", aboutImage);
   return (
     <>
-      <div className="heroSection">
-        <div
-          className={`bg-image position-relative d-flex align-items-center justify-content-center text-white ${styles.BGimage}`}
-        >
-          {/* White shader overlay */}
-          <div
-            className="position-absolute w-100 h-100"
-            style={{
-              backgroundColor: "rgba(255, 255, 255, 0.5)",
-              top: 0,
-              left: 0,
-            }}
-          ></div>
-
-          <div className="container text-center position-relative">
-            <h1 className="display-4 fw-bold text-black">About Us</h1>
-            <p className={`fs-4 fs-md-5 text-black fw-bold`}>
-              <Link href="/" className={`${styles[`hover-effect`]}`}>
-                Home
-              </Link>
-              / About
-            </p>
-          </div>
-        </div>
-      </div>
+      <HeroSection
+        title="About Us"
+        backgroundImage={aboutImage}
+      />
       <div className="middleSection">
         <div className="container pt-5 pb-5">
           <div className="row">
             <div className="col-md-6">
               <div className={`${styles[`hover-effect`]}`}>
                 <Image
-                  src="/service-2.png"
+                  src={aboutImage}
                   alt="images"
                   className="card-img-top"
                   width={300}
@@ -45,9 +32,13 @@ export default function About() {
               </div>
             </div>
 
-            <div className="col-md-6 ">
-              <div className={`${styles[`hover-effect`]}`}>
-                <h5 class="text-info">Why Choose Us</h5>
+            <div className="col-md-6">
+              <div
+                className="col-12"
+                dangerouslySetInnerHTML={{ __html: aboutContent }}
+                style={{ width: "184%" }}
+              >
+                {/* <h5 className="text-info">Why Choose Us</h5>
                 <h2>A leading light in healthcare</h2>
                 <p className="fs-5">
                   Welcome Medical & Diagnostic Center is run by a group of
@@ -79,14 +70,14 @@ export default function About() {
                   moving to different countries every year and from this
                   understanding and commitment to contribute a little to fight
                   the global problem.
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
         </div>
       </div>
       <div className="map">
-      <h2>Our Location</h2>
+        <h2>Our Location</h2>
         <div className={styles.mapContainer}>
           <iframe
             src="https://www.google.com/maps/embed?pb=..."
@@ -98,8 +89,6 @@ export default function About() {
             title="Google Map"
           ></iframe>
         </div>
-      
-    
       </div>
     </>
   );

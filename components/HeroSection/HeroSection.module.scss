@@ -1,0 +1,66 @@
+.heroSection {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); // Add a dark overlay
+    }
+  
+    .content {
+      position: relative;
+      z-index: 1;
+  
+      .breadcrumb {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        display: inline-block;
+  
+        .homeLink {
+          text-decoration: none;
+          color: white;
+          font-weight: bold;
+          transition: color 0.3s, text-decoration 0.3s;
+  
+          &:hover {
+            color: #ffd700; /* Change to gold or desired color */
+            text-decoration: underline;
+          }
+        }
+  
+        .separator {
+          margin: 0 0.5rem;
+          color: white;
+        }
+  
+        .current {
+          color: lightgray;
+          font-weight: normal;
+        }
+      }
+  
+      h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin: 0;
+      }
+  
+      p {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+  

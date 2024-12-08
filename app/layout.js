@@ -18,6 +18,11 @@ export default async function RootLayout({ children }) {
   const data = await dataFetcher(GET_MENUS_ALL_NESTED);
   const menusData = data?.menus;
 
+  const aboutmenusData = data?.menus;
+  const aboutId = aboutmenusData?.find((menu) => menu?.name === "About")?.id; //menu about
+  console.log("about menu id", aboutId);
+  
+
   
   
   return (

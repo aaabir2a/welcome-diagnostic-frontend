@@ -48,38 +48,38 @@ const fitness = ({ children }) => {
 
             <div className="col-6 ">
               <div className={`${styles[`hover-effect`]}`}>
-                <h6 class="text-primary">FITNESS CRITERIA</h6>
-                <h2 class="fw-bold">A Leading Light in Healthcare</h2>
-                <p class="mt-3">
+                <h6 className="text-primary">FITNESS CRITERIA</h6>
+                <h2 className="fw-bold">A Leading Light in Healthcare</h2>
+                <p className="mt-3">
                   SUBJECT WITH THE FOLLOWING DISEASES ARE CONSIDERED UNFIT TO
                   WORK IN ANY COUNTRY
                 </p>
-                <h5 class="fw-bold text-decoration-underline">
+                <h5 className="fw-bold text-decoration-underline">
                   Infectious Diseases:
                 </h5>
-                <ul class="list-unstyled mt-3">
-                  <li class="d-flex align-items-start mb-2">
-                    <i class="fa-solid fa-circle-check text-primary me-2"></i>
+                <ul className="list-unstyled mt-3">
+                  <li className="d-flex align-items-start mb-2">
+                    <i className="fa-solid fa-circle-check text-primary me-2"></i>
                     <span>HIV AIDS Reactive</span>
                   </li>
-                  <li class="d-flex align-items-start mb-2">
-                    <i class="fa-solid fa-circle-check text-primary me-2"></i>
+                  <li className="d-flex align-items-start mb-2">
+                    <i className="fa-solid fa-circle-check text-primary me-2"></i>
                     <span>
                       Hepatitis B Surface Antigen Positive And Anti HCV
                     </span>
                   </li>
-                  <li class="d-flex align-items-start mb-2">
-                    <i class="fa-solid fa-circle-check text-primary me-2"></i>
+                  <li className="d-flex align-items-start mb-2">
+                    <i className="fa-solid fa-circle-check text-primary me-2"></i>
                     <span>
                       Microfilaria Positive & Malaria Blood Film Positive
                     </span>
                   </li>
-                  <li class="d-flex flex-column mb-2">
-                    <div class="d-flex align-items-start">
-                      <i class="fa-solid fa-circle-check text-primary me-2"></i>
+                  <li className="d-flex flex-column mb-2">
+                    <div className="d-flex align-items-start">
+                      <i className="fa-solid fa-circle-check text-primary me-2"></i>
                       <span>Tuberculosis – Any Type</span>
                     </div>
-                    <ul class="list-unstyled ms-4">
+                    <ul className="list-unstyled ms-4">
                       <li>
                         A- Pulmonary By Chest X-Ray Showing Active Or Past
                         Evidence Of Old T.B. Including Minimum Fibrosis,
@@ -89,8 +89,8 @@ const fitness = ({ children }) => {
                       <li>C- Tuberculosis Lymphadenitis</li>
                     </ul>
                   </li>
-                  <li class="d-flex align-items-start">
-                    <i class="fa-solid fa-circle-check text-primary me-2"></i>
+                  <li className="d-flex align-items-start">
+                    <i className="fa-solid fa-circle-check text-primary me-2"></i>
                     <span>
                       Venereal Diseases, VDRL Positive And TPHA Positive
                     </span>

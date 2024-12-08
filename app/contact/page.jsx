@@ -67,87 +67,87 @@ const contact = ({ children }) => {
       </div>
 
       <div className="fromSection">
-        <div class="container pt-5 pb-5">
-          <h2 class="text-center fw-bold mb-4">
+        <div className="container pt-5 pb-5">
+          <h2 className="text-center fw-bold mb-4">
             Drop Us A Message For Any Query
           </h2>
-          <div class="card shadow-sm">
-            <div class="card-body p-4">
+          <div className="card shadow-sm">
+            <div className="card-body p-4">
               <form>
-                <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="name" class="form-label">
+                <div className="row mb-3">
+                  <div className="col-md-6">
+                    <label for="name" className="form-label">
                       Your Name
                     </label>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       id="name"
                       placeholder="Your Name"
                     />
                   </div>
-                  <div class="col-md-6">
-                    <label for="email" class="form-label">
+                  <div className="col-md-6">
+                    <label for="email" className="form-label">
                       Your Email
                     </label>
                     <input
                       type="email"
-                      class="form-control"
+                      className="form-control"
                       id="email"
                       placeholder="Your Email"
                     />
                   </div>
                 </div>
-                <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="phone" class="form-label">
+                <div className="row mb-3">
+                  <div className="col-md-6">
+                    <label for="phone" className="form-label">
                       Your Phone
                     </label>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       id="phone"
                       placeholder="Your Phone"
                     />
                   </div>
-                  <div class="col-md-6">
-                    <label for="subject" class="form-label">
+                  <div className="col-md-6">
+                    <label for="subject" className="form-label">
                       Your Subject
                     </label>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       id="subject"
                       placeholder="Your Subject"
                     />
                   </div>
                 </div>
-                <div class="mb-3">
-                  <label for="message" class="form-label">
+                <div className="mb-3">
+                  <label for="message" className="form-label">
                     Your Message
                   </label>
                   <textarea
-                    class="form-control"
+                    className="form-control"
                     id="message"
                     rows="4"
                     placeholder="Your Message"
                   ></textarea>
                 </div>
-                <div class="form-check mb-3">
-                  <input class="form-check-input" type="checkbox" id="terms" />
-                  <label class="form-check-label" for="terms">
+                <div className="form-check mb-3">
+                  <input className="form-check-input" type="checkbox" id="terms" />
+                  <label className="form-check-label" for="terms">
                     Accept{" "}
-                    <a href="#" class="text-primary">
+                    <a href="#" className="text-primary">
                       Terms & Conditions
                     </a>{" "}
                     and{" "}
-                    <a href="#" class="text-primary">
+                    <a href="#" className="text-primary">
                       Privacy Policy
                     </a>
                     .
                   </label>
                 </div>
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" className="btn btn-primary">
                   Send Message
                 </button>
               </form>
