@@ -1,13 +1,14 @@
-import React from 'react'
+import HeroSection from "@/components/HeroSection/HeroSection";
+import React from "react";
 
-const checkReport = ({children}) => {
+const checkReport = ({ children }) => {
   return (
     <>
-      
-    
-    <div>report</div>
-  </>
-  )
-}
+      <HeroSection title="Report"/>
 
-export default checkReport
+      <div>report</div>
+    </>
+  );
+};
+
+export default checkReport;

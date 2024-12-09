@@ -4,10 +4,10 @@ import Link from "next/link";
 import { BASE_URL } from "@/constant/constant";
 
 export default function AboutUs({ menusData, homeId, aboutContent, aboutImage }) {
-  console.log("Menus Data:", menusData);
-  console.log("Home Menu ID:", homeId);
-  console.log("Aboutbgf Content:", aboutContent);
-  console.log("About Image:", aboutImage);
+  // console.log("Menus Data:", menusData);
+  // console.log("Home Menu ID:", homeId);
+  // console.log("Aboutbgf Content:", aboutContent);
+  // console.log("About Image:", aboutImage);
 
   return (
     <div className="container pt-5 pb-5">

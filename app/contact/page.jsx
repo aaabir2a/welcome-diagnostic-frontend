@@ -1,35 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./layout.module.scss";
+import HeroSection from "@/components/HeroSection/HeroSection";
 
 const contact = ({ children }) => {
   return (
     <>
-      <div className="heroSection">
-        <div
-          className={`bg-image position-relative d-flex align-items-center justify-content-center text-white ${styles.BGimage}`}
-        >
-          {/* White shader overlay */}
-          <div
-            className="position-absolute w-100 h-100"
-            style={{
-              backgroundColor: "rgba(255, 255, 255, 0.5)",
-              top: 0,
-              left: 0,
-            }}
-          ></div>
-
-          <div className="container text-center position-relative">
-            <h1 className="display-4 fw-bold text-black">Contact Us</h1>
-            <p className={`fs-4 fs-md-5 text-black fw-bold`}>
-              <Link href="/" className={`${styles[`hover-effect`]}`}>
-                Home
-              </Link>
-              / Contact Us
-            </p>
-          </div>
-        </div>
-      </div>
 
       {/* card Section */}
       <div className="container pt-5 pb-5">
@@ -76,7 +52,7 @@ const contact = ({ children }) => {
               <form>
                 <div className="row mb-3">
                   <div className="col-md-6">
-                    <label for="name" className="form-label">
+                    <label htmlFor="name" className="form-label">
                       Your Name
                     </label>
                     <input
@@ -87,7 +63,7 @@ const contact = ({ children }) => {
                     />
                   </div>
                   <div className="col-md-6">
-                    <label for="email" className="form-label">
+                    <label htmlFor="email" className="form-label">
                       Your Email
                     </label>
                     <input
@@ -100,7 +76,7 @@ const contact = ({ children }) => {
                 </div>
                 <div className="row mb-3">
                   <div className="col-md-6">
-                    <label for="phone" className="form-label">
+                    <label htmlFor="phone" className="form-label">
                       Your Phone
                     </label>
                     <input
@@ -111,7 +87,7 @@ const contact = ({ children }) => {
                     />
                   </div>
                   <div className="col-md-6">
-                    <label for="subject" className="form-label">
+                    <label htmlFor="subject" className="form-label">
                       Your Subject
                     </label>
                     <input
@@ -123,7 +99,7 @@ const contact = ({ children }) => {
                   </div>
                 </div>
                 <div className="mb-3">
-                  <label for="message" className="form-label">
+                  <label htmlFor="message" className="form-label">
                     Your Message
                   </label>
                   <textarea
@@ -134,8 +110,12 @@ const contact = ({ children }) => {
                   ></textarea>
                 </div>
                 <div className="form-check mb-3">
-                  <input className="form-check-input" type="checkbox" id="terms" />
-                  <label className="form-check-label" for="terms">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    id="terms"
+                  />
+                  <label className="form-check-label" htmlFor="terms">
                     Accept{" "}
                     <a href="#" className="text-primary">
                       Terms & Conditions

@@ -1,106 +1,78 @@
-import React from "react";
+"use client";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./layout.module.scss";
-import Link from "next/link";
 import Image from "next/image";
+import { FitnessContext } from "./FitnessProvider";
 
+const Fitness = () => {
+  const { FitnessContent, FitnessAboutContent, FitnessImage } = useContext(FitnessContext);
+  const [parsedContent, setParsedContent] = useState([]);
+  const [parsedAboutContent, setParsedAboutContent] = useState([]);
 
-const fitness = ({ children }) => {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Function to parse HTML string and dynamically add FontAwesome icons
+      const parseHTML = (htmlString, addIcons = false) => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlString, "text/html");
+        const content = Array.from(doc.body.childNodes);
+
+        return content.map((node, index) => {
+          if (node.nodeName === "LI" && addIcons) {
+            // Add FontAwesome icon dynamically to list items
+            return (
+              <li key={index} className="d-flex align-items-start mb-2">
+                <i className="fa-solid fa-circle-check text-primary me-2"></i>
+                <span>{node.textContent}</span>
+              </li>
+            );
+          } else if (node.nodeName === "UL") {
+            // Recursively parse nested lists
+            return (
+              <ul key={index} className="list-unstyled ms-4">
+                {parseHTML(node.innerHTML, true)}
+              </ul>
+            );
+          } else {
+            // Render other nodes (e.g., <h5>, <p>) directly
+            return React.cloneElement(<div />, { key: index, dangerouslySetInnerHTML: { __html: node.outerHTML } });
+          }
+        });
+      };
+
+      // Parse content when running on the client
+      setParsedContent(parseHTML(FitnessContent));
+      setParsedAboutContent(parseHTML(FitnessAboutContent, true));
+    }
+  }, [FitnessContent, FitnessAboutContent]);
+
   return (
     <>
-      <div className="heroSection">
-        <div
-          className={`bg-image position-relative d-flex align-items-center justify-content-center text-white ${styles.BGimage}`}
-        >
-          {/* White shader overlay */}
-          <div
-            className="position-absolute w-100 h-100"
-            style={{
-              backgroundColor: "rgba(255, 255, 255, 0.5)",
-              top: 0,
-              left: 0,
-            }}
-          ></div>
-
-          <div className="container text-center position-relative">
-            <h1 className="display-4 fw-bold text-black">Medical Fitness Criteria</h1>
-            <p className={`fs-4 fs-md-5 text-black fw-bold`}>
-              <Link href="/" className={`${styles[`hover-effect`]}`}>
-                Home
-              </Link>
-              / Fitness Criteria
-            </p>
-          </div>
-        </div>
-      </div>
-    
-        <div className="container pt-5 pb-5">
-          <div className="row">
-            <div className="col-6">
+      <div className="container pt-5 pb-5">
+        <div className="row">
+          <div className="col-6">
             <div className={`${styles[`hover-effect`]}`}>
               <Image
-                src="/service-3.png" // Replace with your image path
+                src={FitnessImage}
                 alt="Building"
                 width={600}
                 height={600}
               />
-              </div>
             </div>
+          </div>
 
-            <div className="col-6 ">
-              <div className={`${styles[`hover-effect`]}`}>
-                <h6 className="text-primary">FITNESS CRITERIA</h6>
-                <h2 className="fw-bold">A Leading Light in Healthcare</h2>
-                <p className="mt-3">
-                  SUBJECT WITH THE FOLLOWING DISEASES ARE CONSIDERED UNFIT TO
-                  WORK IN ANY COUNTRY
-                </p>
-                <h5 className="fw-bold text-decoration-underline">
-                  Infectious Diseases:
-                </h5>
-                <ul className="list-unstyled mt-3">
-                  <li className="d-flex align-items-start mb-2">
-                    <i className="fa-solid fa-circle-check text-primary me-2"></i>
-                    <span>HIV AIDS Reactive</span>
-                  </li>
-                  <li className="d-flex align-items-start mb-2">
-                    <i className="fa-solid fa-circle-check text-primary me-2"></i>
-                    <span>
-                      Hepatitis B Surface Antigen Positive And Anti HCV
-                    </span>
-                  </li>
-                  <li className="d-flex align-items-start mb-2">
-                    <i className="fa-solid fa-circle-check text-primary me-2"></i>
-                    <span>
-                      Microfilaria Positive & Malaria Blood Film Positive
-                    </span>
-                  </li>
-                  <li className="d-flex flex-column mb-2">
-                    <div className="d-flex align-items-start">
-                      <i className="fa-solid fa-circle-check text-primary me-2"></i>
-                      <span>Tuberculosis – Any Type</span>
-                    </div>
-                    <ul className="list-unstyled ms-4">
-                      <li>
-                        A- Pulmonary By Chest X-Ray Showing Active Or Past
-                        Evidence Of Old T.B. Including Minimum Fibrosis,
-                        Calcification And Pleural Thickening
-                      </li>
-                      <li>B- Tuberculosis Pleural Effusion</li>
-                      <li>C- Tuberculosis Lymphadenitis</li>
-                    </ul>
-                  </li>
-                  <li className="d-flex align-items-start">
-                    <i className="fa-solid fa-circle-check text-primary me-2"></i>
-                    <span>
-                      Venereal Diseases, VDRL Positive And TPHA Positive
-                    </span>
-                  </li>
-                </ul>
-              </div>
+          <div className="col-6 ">
+            <div className={`${styles[`hover-effect`]}`}>
+              {/* Render dynamic parsed content */}
+              <div>{parsedContent}</div>
+
+              {/* Render dynamic parsed about content with FontAwesome icons */}
+              <div className="mt-3">{parsedAboutContent}</div>
             </div>
           </div>
         </div>
-    
+      </div>
+
       <div className="map">
         <h2>Our Location</h2>
         <div className={styles.mapContainer}>
@@ -119,4 +91,4 @@ const fitness = ({ children }) => {
   );
 };
 
-export default fitness;
+export default Fitness;

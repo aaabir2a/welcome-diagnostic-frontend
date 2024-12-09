@@ -1,43 +1,23 @@
-import React from "react";
+"use client";
+
 import Image from "next/image";
 import styles from "./service.module.scss";
+import { ServiceContext } from "./ServiceProvider";
+import { useContext } from "react";
 import Link from "next/link";
 
-const mServices = () => {
+export default function MServices() {
+  const { ServicesContent, ServicesAboutContent, serviceImage } =
+    useContext(ServiceContext);
+
   return (
     <>
-      <div className="heroSection">
-        <div
-          className={`bg-image position-relative d-flex align-items-center justify-content-center text-white ${styles.BGimage}`}
-        >
-          {/* White shader overlay */}
-          <div
-            className="position-absolute w-100 h-100"
-            style={{
-              backgroundColor: "rgba(255, 255, 255, 0.5)",
-              top: 0,
-              left: 0,
-            }}
-          ></div>
-
-          <div className="container text-center position-relative">
-            <h1 className="display-4 fw-bold text-black">Services</h1>
-            <p className={`fs-4 fs-md-5 text-black fw-bold`}>
-              <Link href="/" className={`${styles[`hover-effect`]}`}>
-                Home
-              </Link>
-              / Services
-            </p>
-          </div>
-        </div>
-      </div>
-
       <div className="container pt-5 pb-5">
         <div className="row align-items-center">
           {/* Left Image Section */}
           <div className="col-md-6">
             <Image
-              src="/service-3.png" // Replace with your image path
+              src={serviceImage}
               alt="Building"
               className="img-fluid rounded"
               width={600}
@@ -50,40 +30,22 @@ const mServices = () => {
 
           {/* Right Content Section */}
           <div className="col-md-6">
-            <h5 className="text-primary">SERVICES</h5>
-            <h2 className="fw-bold">
-              Industry Leading Technology Enhances Health
-            </h2>
+            <div
+              dangerouslySetInnerHTML={{ __html: ServicesAboutContent }}
+              style={{ width: "184%" }}
+            ></div>
             <ul className="list-unstyled mt-4">
-              <li className="d-flex align-items-start mb-3">
-                <i className="fas fa-check-circle text-primary me-3"></i>
-                <span>
-                  Clinical Laboratory Investigations With Professional
-                  Technologist And Materials.
-                </span>
-              </li>
-              <li className="d-flex align-items-start mb-3">
-                <i className="fas fa-check-circle text-primary me-3"></i>
-                <span>
-                  Radiology And Imaging Services With Modern Machineries And
-                  Materials.
-                </span>
-              </li>
-              <li className="d-flex align-items-start mb-3">
-                <i className="fas fa-check-circle text-primary me-3"></i>
-                <span>
-                  Reporting And Recording With Utmost Care And Accuracy Using
-                  Modern Tools.
-                </span>
-              </li>
-              <li className="d-flex align-items-start mb-3">
-                <i className="fas fa-check-circle text-primary me-3"></i>
-                <span>
-                  Comprehensive And Complete Physical And Mental Check-Up
-                  Facilities With Full Care And Counseling.
-                </span>
-              </li>
+              {ServicesContent.split(/<\/?p>/)
+                .filter((text) => text.trim() !== "") // Remove empty strings from splitting
+                .map((text, index) => (
+                  <li className="d-flex align-items-start mb-3" key={index}>
+                    <i className="fas fa-check-circle text-primary me-3"></i>
+                    <span dangerouslySetInnerHTML={{ __html: text }}></span>
+                  </li>
+                ))}
             </ul>
+
+            <Link href="/about">
             <button
               className={`btn btn-primary btn-hover mt-4 ${
                 styles[`btn-hover`]
@@ -91,6 +53,9 @@ const mServices = () => {
             >
               About Us
             </button>
+            </Link>
+
+
           </div>
         </div>
       </div>
@@ -110,6 +75,4 @@ const mServices = () => {
       </div>
     </>
   );
-};
-
-export default mServices;
+}

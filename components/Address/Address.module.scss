@@ -1,12 +1,25 @@
-.address{
+.address {
     background-color: #0979ea;
     color: white;
-    padding: 10rem;
-    text-align: center;
-    border-radius: 20px;
-
-    @media(max-width: 768px){
-        padding: 0.5rem;
-        font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0px;
+    font-size: 1rem;
+  
+    i {
+      font-size: 1.2rem;
     }
-}
+  
+    span {
+      font-size: 1rem;
+    }
+  
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+  
+      div {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  
