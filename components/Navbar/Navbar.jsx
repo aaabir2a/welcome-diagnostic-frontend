@@ -5,35 +5,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.scss";
-import { fetchMenuData, GET_MENUS_ALL_NESTED } from "@/lib/api";
 
 export default function Navbar({ buttonText = "Checks Report", menusData }) {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(true);
-  const [menus, setMenus] = useState(menusData);
-  // menus.slice(0, 6).forEach((menus) => console.log("Menu ID:", menus.id));
 
-  
-
-  // useEffect(() => {
-  //   async function getMenu() {
-  //     // const res = await fetch(GET_MENUS_ALL_NESTED);
-  //     // const data = await res.json();
-  //     const data = await fetchMenuData();
-  //     console.log("Fetched menus:", data);
-  //     setMenus(data.menus); // Set the data fetched from the API
-  //   }
-  //   getMenu();
-  // }, []);
-
-
-    // if (pathname === "/") {
-    //   const homeMenu = menus?.find((menu) => menu?.name === "Home");
-    //   if (homeMenu) {
-    //     console.log("Home Menu ID:", homeMenu?.id);
-    //   }
-    // }
+  const toggleNavbar = () => {
+    setIsCollapsed(!isCollapsed);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,15 +36,13 @@ export default function Navbar({ buttonText = "Checks Report", menusData }) {
       case "Medical Procedure":
         return "/medical-procedure";
       case "Clients":
-        return "/m-services";
+        return "/clients";
       case "Fitness Criteria":
         return "/fitness-criteria";
       case "Gallery":
-        return "/fitness-criteria";
+        return "/gallery";
       case "Sister Concerns":
-        return "/fitness-criteria";
-          
-
+        return "/sister-concerns";
       default:
         return "#"; // Default to a placeholder or "#" if no route matches
     }
@@ -73,96 +51,73 @@ export default function Navbar({ buttonText = "Checks Report", menusData }) {
   return (
     <nav
       className={`navbar navbar-expand-lg sticky-top ${
-        isScrolled ? "bg-light shadow-sm" : "bg-transparent"
-      }`}
+        isScrolled ? "bg-light shadow-sm" : "bg-white"
+      } ${styles.navbar} ${isScrolled ? styles.navbarScrolled : ""}`}
       style={{
         transition: "all 0.3s ease",
+        padding: isScrolled ? "10px 15px" : "15px 100px", // Adjust padding on scroll
       }}
     >
-      <div
-        className="container"
-        style={{
-          maxWidth: isScrolled ? "100%" : "1200px",
-          margin: "0 auto",
-          transition: "max-width 0.3s ease",
-        }}
-      >
+      <div className="container">
         {/* Logo */}
         <Link href="/" className={`navbar-brand ${styles[`navbar-brand`]}`}>
-          <Image src="/logo.jpg" alt="Logo" height={100} width={200} />
+          <Image
+            src="/logo.jpg"
+            alt="Logo"
+            height={isScrolled ? 40 : 50} // Adjust logo size on scroll
+            width={isScrolled ? 80 : 100}
+          />
         </Link>
 
         {/* Toggler for mobile */}
         <button
           className="navbar-toggler"
           type="button"
-          onClick={() => setIsCollapsed(!isCollapsed)}
+          onClick={toggleNavbar}
+          aria-controls="navbarNav"
+          aria-expanded={!isCollapsed}
+          aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         {/* Navbar Links */}
-        <div className={`collapse navbar-collapse justify-content-center id="navbarNav ${styles.navbar}`}>
-          <ul className={`navbar-nav me-auto mb-2 mb-lg-0 fw-bold ${styles[`navbar-nav`]}`}>
-            {menus?.length > 0 ? (
-              menus?.slice(0, 6)?.map((menu) => (
-                <li key={menu?.id} className="nav-item">
-                  <Link
-                    href={getPagePath(menu?.name)}
-                    className={`nav-link active ${styles[`hover-effect`]}`}
-                  >
-                    {menu?.name}
-                  </Link>
-                </li>
-              ))
+        <div
+          className={`collapse navbar-collapse ${
+            !isCollapsed ? "show" : ""
+          }`}
+          id="navbarNav"
+        >
+          <ul
+            className={`navbar-nav me-auto mb-2 mb-lg-0 fw-bold ${styles[`navbar-nav`]}`}
+          >
+            {menusData?.length > 0 ? (
+              menusData.slice(0, 6).map((menu) => {
+                const isActive = pathname === getPagePath(menu.name); // Check if menu item matches the current path
+                return (
+                  <li key={menu.id} className="nav-item">
+                    <Link
+                      href={getPagePath(menu.name)}
+                      className={`nav-link active ${styles[`hover-effect`]} ${
+                        isActive ? "text-primary" : ""
+                      }`} // Apply "text-primary" for active page
+                    >
+                      {menu.name}
+                    </Link>
+                  </li>
+                );
+              })
             ) : (
               <li className="nav-item">
                 <span className="nav-link">Loading...</span>
               </li>
             )}
-
-            {/* <li className="nav-item ">
-              <Link href="/" className={`nav-link active ${styles[`hover-effect`]}`}>
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/about"  className={`nav-link active ${styles[`hover-effect`]}`}>
-                About Us
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/m-services" className={`nav-link active ${styles[`hover-effect`]}`}>
-                Services
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/medical-procedure" className={`nav-link active ${styles[`hover-effect`]}`}>
-                Medical Procedure
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/fitness-criteria" className={`nav-link active ${styles[`hover-effect`]}`}>
-                Fitness Criteria
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link href="/contact" className={`nav-link active ${styles[`hover-effect`]}`}>
-                Contact Us
-              </Link>
-            </li> */}
           </ul>
           <div>
             <Link href="/check-report">
-              {pathname === "/" ? (
-                <button className={`btn btn-outline-primary ms-3 `}>
-                  Checks Mail
-                </button>
-              ) : (
-                <button className={`btn btn-outline-primary ms-3`}>
-                  Checks Report
-                </button>
-              )}
+              <button className="btn btn-outline-primary ms-3">
+                {pathname === "/" ? "Checks Mail" : "Checks Report"}
+              </button>
             </Link>
           </div>
         </div>

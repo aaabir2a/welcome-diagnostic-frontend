@@ -2,14 +2,14 @@ import styles from "./Address.module.scss";
 
 const Address = () => {
   return (
-    <div className={`p-2 text-center d-flex justify-content-between align-items-center ${styles.address}`}>
+    <div className={`p-2 text-center d-flex justify-content-center align-items-center gap-5 ${styles.address}`}>
       <div className="d-flex align-items-center">
         <i className="fas fa-map-marker-alt me-2"></i>
-        <span>welcome Diagnostic, Purana Paltan, Dhaka-1000.</span>
+        <span> House-10, Road-8 Baridhara J Block, Dhaka 1212.</span>
       </div>
       <div className="d-flex align-items-center">
         <i className="fas fa-phone-alt me-2"></i>
-        <span>+880 0170000000, 0170000000 </span>
+        <span>+880 01977-043482 </span>
       </div>
       <div className="d-flex align-items-center">
         <i className="fas fa-envelope me-2"></i>

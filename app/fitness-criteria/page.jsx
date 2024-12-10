@@ -22,7 +22,9 @@ const Fitness = () => {
             // Add FontAwesome icon dynamically to list items
             return (
               <li key={index} className="d-flex align-items-start mb-2">
-                <i className="fa-solid fa-circle-check text-primary me-2"></i>
+                <i className="fa-solid fa-circle-check text-primary me-2"
+                style={{lineHeight: "inherit"}}
+                ></i>
                 <span>{node.textContent}</span>
               </li>
             );
@@ -49,19 +51,20 @@ const Fitness = () => {
   return (
     <>
       <div className="container pt-5 pb-5">
-        <div className="row">
-          <div className="col-6">
+        <div className="row align-items-center">
+          <div className="col-12 col-md-6 mb-4 mb-md-0">
             <div className={`${styles[`hover-effect`]}`}>
               <Image
                 src={FitnessImage}
                 alt="Building"
                 width={600}
                 height={600}
+                className="img-fluid" // Makes the image responsive
               />
             </div>
           </div>
 
-          <div className="col-6 ">
+          <div className="col-12 col-md-6">
             <div className={`${styles[`hover-effect`]}`}>
               {/* Render dynamic parsed content */}
               <div>{parsedContent}</div>
@@ -73,20 +76,6 @@ const Fitness = () => {
         </div>
       </div>
 
-      <div className="map">
-        <h2>Our Location</h2>
-        <div className={styles.mapContainer}>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=..."
-            width="100%"
-            height="450"
-            style={{ border: "0" }}
-            allowFullScreen=""
-            loading="lazy"
-            title="Google Map"
-          ></iframe>
-        </div>
-      </div>
     </>
   );
 };

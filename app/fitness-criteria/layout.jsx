@@ -8,6 +8,7 @@ import {
 import React from "react";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import FitnessProvider from "./FitnessProvider";
+import { GooleMap } from "@/components/Map/map";
 
 
 
@@ -43,7 +44,9 @@ export default async function AboutLayout({ children }) {
             <HeroSection
         title="Medical Fitness Criteria"
       />
+     
       <section>{children}</section>
+      <GooleMap/>
     </FitnessProvider>
   );
 }

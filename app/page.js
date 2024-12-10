@@ -12,6 +12,8 @@ import { getSections } from "@/utils/sectionData";
 export default async function Home() {
   // Fetch data
   const sliderIamge = (await dataFetcher(GET_SLIDERSETTINGS))?.homepage_sliders;
+  
+  
 
   const menusData = (await dataFetcher(GET_MENUS_ALL_NESTED))?.menus;
 
@@ -35,6 +37,7 @@ export default async function Home() {
     aboutContent = contentData?.menu_contents?.["About"] || null;
     servicesContent = contentData?.menu_contents?.["m-Services"] || null;
     contactContent = contentData?.menu_contents?.["contact"] || null;
+    
 
     const imageData = await contentFetcher(`${GET_IMAGE_BY_MENU_ID}/${homeId}`);
 

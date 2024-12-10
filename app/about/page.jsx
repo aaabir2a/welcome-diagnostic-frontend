@@ -13,6 +13,7 @@ export default function About() {
     <>
 
       <div className="middleSection">
+        
         <div className="container pt-5 pb-5">
           <div className="row">
             <div className="col-md-6">
@@ -39,20 +40,7 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="map">
-        <h2>Our Location</h2>
-        <div className={styles.mapContainer}>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=..."
-            width="100%"
-            height="450"
-            style={{ border: "0" }}
-            allowFullScreen=""
-            loading="lazy"
-            title="Google Map"
-          ></iframe>
-        </div>
-      </div>
+      
     </>
   );
 }

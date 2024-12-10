@@ -46,8 +46,8 @@
   transition: all 0.3s ease-in-out; // Smooth transition for hover effects
 
   &:hover {
-    background-color: #007bff; // Bootstrap primary color
-    color: rgb(4, 1, 16); // Change text color on hover
+    background-color: #ffffff; // Bootstrap primary color
+    color: rgb(26, 1, 1); // Change text color on hover
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Add shadow
     transform: translateY(-4px); // Slightly lift the column
   }

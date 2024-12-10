@@ -2,13 +2,14 @@
   position: sticky;
   top: 0;
   z-index: 1030;
-  // background-color: #ffffff; /* Adjust for your theme */
+  background-color: #ffffff; // Default white background
   transition: all 0.3s ease-in-out;
-}
+  padding: 20px 25px; // Default padding
 
-.navbar-scrolled {
-  width: 100%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  &.navbarScrolled {
+    padding: 15px 20px; // Smaller padding when scrolled
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Add shadow on scroll
+  }
 }
 
 .navbar-brand {
@@ -16,20 +17,22 @@
 }
 
 .navbar-scrolled .navbar-brand {
-  transform: scale(0.8); /* Shrinks the logo on scroll */
+  transform: scale(0.9); // Shrink logo on scroll
 }
 
 .navbar-nav {
-  margin: auto; /* Keeps menu items centered */
+  margin: auto; // Keeps menu items centered
+}
+
+.navbar-toggler {
+  border: none;
 }
 
 .hover-effect {
-  transition: all 0.3s ease-in-out; // Smooth transition for hover effects
+  transition: all 0.3s ease-in-out;
 
   &:hover {
-    // background-color: #007bff; // Bootstrap primary color
     color: rgb(55, 8, 244); // Change text color on hover
-    // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Add shadow
-    transform: translateY(-4px); // Slightly lift the column
+    transform: translateY(-2px); // Slightly lift the link
   }
 }

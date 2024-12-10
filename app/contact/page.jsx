@@ -1,9 +1,59 @@
-import React from "react";
-import Link from "next/link";
+"use client"
+import React, { useContext, useState } from "react";
 import styles from "./layout.module.scss";
-import HeroSection from "@/components/HeroSection/HeroSection";
+import { ContactContext } from "./ContactProvider";
+import emailjs from "emailjs-com";
 
-const contact = ({ children }) => {
+const Contact = () => {
+  const {EmailContent, CallContent, AddressContent} = useContext(ContactContext);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+  const [status, setStatus] = useState({ success: false, message: "" });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .send(
+        "service_4t2c3k3", // Replace with your EmailJS Service ID
+        "template_bfp5ii1", // Replace with your EmailJS Template ID
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        "LWAfADAQLTFyUfsws" // Replace with your EmailJS Public Key
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          setStatus({ success: true, message: "Message sent successfully!" });
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            subject: "",
+            message: "",
+          });
+        },
+        (error) => {
+          console.error("FAILED...", error);
+          setStatus({ success: false, message: "Failed to send message." });
+        }
+      );
+  };
   return (
     <>
 
@@ -15,9 +65,9 @@ const contact = ({ children }) => {
             <div className={styles.card}>
               <a href="mailto:info@ibnomar.com.bd" className={styles.cardLink}>
                 <i className="bi bi-envelope-fill"></i>
-                <h3>Email Us:</h3>
-                <p>info@ibnomar.com.bd</p>
-                <p>omarfarukmib@gmail.com</p>
+                <div 
+                dangerouslySetInnerHTML={{ __html: EmailContent }}
+                ></div>
               </a>
             </div>
           </div>
@@ -25,31 +75,48 @@ const contact = ({ children }) => {
             {/* Call Card */}
             <div className={styles.card}>
               <i className="bi bi-telephone-fill"></i>
-              <h3>Call Us:</h3>
-              <p>Tel. +880 2226638040</p>
-              <p>Tel. +880 1708420389</p>
+             <div
+             dangerouslySetInnerHTML={{ __html: CallContent }}
+             ></div>
             </div>
           </div>
           <div className="col-md-4">
             {/* Address Card */}
             <div className={styles.card}>
               <i className="bi bi-geo-alt-fill"></i>
-              <h3>Address</h3>
-              <p>Fahima Tower, 42-43 Purana Paltan, Dhaka-1000.</p>
-              <p>(কেন্দ্রী হোটেলের পাশে গলির শেষ মাথায়)</p>
+              <div 
+              dangerouslySetInnerHTML={{ __html: AddressContent }}
+              ></div>
             </div>
           </div>
         </div>
       </div>
 
       <div className="fromSection">
-        <div className="container pt-5 pb-5">
-          <h2 className="text-center fw-bold mb-4">
-            Drop Us A Message For Any Query
-          </h2>
-          <div className="card shadow-sm">
-            <div className="card-body p-4">
-              <form>
+      <div className="container pt-5 pb-5">
+        <h2 className="text-center fw-bold mb-4">
+          Drop Us A Message For Any Query
+        </h2>
+        <div className="card shadow-sm">
+          <div className="card-body p-4">
+            {status.message && (
+              <div
+                className={`alert ${
+                  status.success ? "alert-success" : "alert-danger"
+                }`}
+              >
+                {status.message}
+              </div>
+            )}
+            {status.success ? (
+              <button
+                className="btn btn-primary mt-3"
+                onClick={() => setStatus({ success: false, message: "" })}
+              >
+                Again
+              </button>
+            ) : (
+              <form onSubmit={handleSubmit}>
                 <div className="row mb-3">
                   <div className="col-md-6">
                     <label htmlFor="name" className="form-label">
@@ -60,6 +127,9 @@ const contact = ({ children }) => {
                       className="form-control"
                       id="name"
                       placeholder="Your Name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
                     />
                   </div>
                   <div className="col-md-6">
@@ -71,6 +141,9 @@ const contact = ({ children }) => {
                       className="form-control"
                       id="email"
                       placeholder="Your Email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
                     />
                   </div>
                 </div>
@@ -84,6 +157,9 @@ const contact = ({ children }) => {
                       className="form-control"
                       id="phone"
                       placeholder="Your Phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
                     />
                   </div>
                   <div className="col-md-6">
@@ -95,6 +171,9 @@ const contact = ({ children }) => {
                       className="form-control"
                       id="subject"
                       placeholder="Your Subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      required
                     />
                   </div>
                 </div>
@@ -107,51 +186,26 @@ const contact = ({ children }) => {
                     id="message"
                     rows="4"
                     placeholder="Your Message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                   ></textarea>
-                </div>
-                <div className="form-check mb-3">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    id="terms"
-                  />
-                  <label className="form-check-label" htmlFor="terms">
-                    Accept{" "}
-                    <a href="#" className="text-primary">
-                      Terms & Conditions
-                    </a>{" "}
-                    and{" "}
-                    <a href="#" className="text-primary">
-                      Privacy Policy
-                    </a>
-                    .
-                  </label>
                 </div>
                 <button type="submit" className="btn btn-primary">
                   Send Message
                 </button>
               </form>
-            </div>
+            )}
           </div>
         </div>
       </div>
+    </div>
 
-      <div className="map">
-        <h2>Our Location</h2>
-        <div className={styles.mapContainer}>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=..."
-            width="100%"
-            height="450"
-            style={{ border: "0" }}
-            allowFullScreen=""
-            loading="lazy"
-            title="Google Map"
-          ></iframe>
-        </div>
-      </div>
+      
+
+
     </>
   );
 };
 
-export default contact;
+export default Contact;

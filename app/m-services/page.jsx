@@ -39,7 +39,9 @@ export default function MServices() {
                 .filter((text) => text.trim() !== "") // Remove empty strings from splitting
                 .map((text, index) => (
                   <li className="d-flex align-items-start mb-3" key={index}>
-                    <i className="fas fa-check-circle text-primary me-3"></i>
+                    <i className="fas fa-check-circle text-primary me-3" 
+                    style={{lineHeight: "inherit"}}
+                    ></i>
                     <span dangerouslySetInnerHTML={{ __html: text }}></span>
                   </li>
                 ))}
@@ -59,20 +61,7 @@ export default function MServices() {
           </div>
         </div>
       </div>
-      <div className="map">
-        <h2>Our Location</h2>
-        <div className={styles.mapContainer}>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=..."
-            width="100%"
-            height="450"
-            style={{ border: "0" }}
-            allowFullScreen=""
-            loading="lazy"
-            title="Google Map"
-          ></iframe>
-        </div>
-      </div>
+     
     </>
   );
 }

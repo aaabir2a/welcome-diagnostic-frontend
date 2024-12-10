@@ -8,6 +8,7 @@ import {
 import React from "react";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import ContactProvider from "./ContactProvider";
+import { GooleMap } from "@/components/Map/map";
 
 
 
@@ -15,27 +16,29 @@ export default async function AboutLayout({ children }) {
   
     
   const menusData = (await dataFetcher(GET_MENUS_ALL_NESTED))?.menus;
-  const ServicesId = menusData?.find((menu) => menu?.name === "Services")?.id; //menu Services
-  //console.log("Services menu", ServicesId);
+  const ContactId = menusData?.find((menu) => menu?.name === "Contact Us")?.id; //menu Services
+  console.log("contact menu", ContactId);
 
   const contentData = await dataFetcher(
-    `${GET_CONTENTS_BY_MENU_ID}/${ServicesId}`
+    `${GET_CONTENTS_BY_MENU_ID}/${ContactId}`
   );
-  const ServicesContent = contentData?.menu_contents?.["Service"] || null;
-  //console.log("Services content menu", ServicesContent);
-  const ServicesAboutContent = contentData?.menu_contents?.["About"] || null;
-  //console.log("Services About content menu", ServicesAboutContent);
+  const EmailContent = contentData?.menu_contents?.["Email"] || null;
+  //console.log("Email content", EmailContent);
+  const CallContent = contentData?.menu_contents?.["call"] || null;
+  //console.log("Call content", CallContent);
+  const AddressContent = contentData?.menu_contents?.["Address"] || null;
+  //console.log("Address content", AddressContent);
 
-  const imageData = await dataFetcher(`${GET_IMAGE_BY_MENU_ID}/${ServicesId}`);
-  const serviceImage = imageData?.content_images?.find(
-    (img) => img?.head === "About"
-  )?.image;
+  // const imageData = await dataFetcher(`${GET_IMAGE_BY_MENU_ID}/${ContactId}`);
+  // const serviceImage = imageData?.content_images?.find(
+  //   (img) => img?.head === "About"
+  // )?.image;
   //console.log("service image menu", serviceImage);
 
   const aboutData = {
-    ServicesContent,
-    ServicesAboutContent,
-    serviceImage: serviceImage ? `${BASE_URL}${serviceImage}` : null,
+    EmailContent,
+    CallContent,
+    AddressContent,
   };
 
   return (
@@ -44,6 +47,7 @@ export default async function AboutLayout({ children }) {
         title="Contact Us"
       />
       <section>{children}</section>
+      <GooleMap/>
     </ContactProvider>
   );
 }

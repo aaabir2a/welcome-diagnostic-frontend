@@ -2,8 +2,8 @@ import Link from 'next/link';
 import styles from './ContactUs.module.scss';
 
 export default function ContactUs({ contactContent, contactImage }) {
-  console.log("Contact Content:", contactContent);
-  console.log("Contact Images:", contactImage);
+  // console.log("Contact Content:", contactContent);
+  // console.log("Contact Images:", contactImage);
 
 
   const defaultBackgroundImage = contactImage?.[0] || '/contact-us-bg.jpg';

@@ -8,6 +8,7 @@ import {
 import React from "react";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import ServiceProvider from "./ServiceProvider";
+import { GooleMap } from "@/components/Map/map";
 
 
 
@@ -44,6 +45,7 @@ export default async function AboutLayout({ children }) {
         title="Our Services"
       />
       <section>{children}</section>
+      <GooleMap/>
     </ServiceProvider>
   );
 }

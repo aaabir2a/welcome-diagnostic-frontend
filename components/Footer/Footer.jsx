@@ -2,8 +2,10 @@ import React from 'react';
 import styles from './Footer.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import { BASE_URL } from '@/constant/constant';
 
-const Footer = () => {
+const Footer = ({email,logo,address,phone}) => {
+  
   return (
     <>
       <footer className="bg-dark text-light py-4">
@@ -12,7 +14,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="col-md-4 mb-4">
             <Image
-              src="/logo.jpg"
+              src={`${BASE_URL}${logo}`}
               alt="IBN Omar Logo"
               width={600}
               height={100}
@@ -88,24 +90,24 @@ const Footer = () => {
           <div className="col-md-3 mb-4">
             <h5>Address</h5>
             <p>
-              <i className="fas fa-map-marker-alt me-2"></i> Fahima Tower, 42-43
-              Purana Paltan, Dhaka-1000, Bangladesh
+              <i className="fas fa-map-marker-alt me-2"></i> 
+              {address}
             </p>
             <p>
-              <i className="fas fa-envelope me-2"></i> info@ibnomar.com.bd
+              <i className="fas fa-envelope me-2"></i> {email}
             </p>
             <p>
-              <i className="fas fa-phone me-2"></i> +880 2226638040 <br />
-              <i className="fas fa-phone me-2"></i> +880 1708420389
+              <i className="fas fa-phone me-2"></i> {phone}<br />
+              <i className="fas fa-phone me-2"></i> {phone}
             </p>
           </div>
         </div>
 
         <div className="text-center mt-3">
           <p className="mb-0">
-            Copyright ©2022 Ibn Omar Medical & Diagnostic Center | Designed by{' '}
-            <a href="#" className="text-primary text-decoration-none">
-              G4 Tech
+            Copyright ©2024 Welcome Diagnostic & Medical Center | Designed by{' '}
+            <a href="http://www.bluebayit.com/" className="text-primary text-decoration-none">
+              Bluebay IT Limited
             </a>
           </p>
         </div>
