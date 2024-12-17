@@ -43,12 +43,20 @@
 }
 
 .hover-effect {
+  display: inline-block; // Ensures proper sizing for the hover effect
+  border-radius: 50%; // Makes the hover effect circular
   transition: all 0.3s ease-in-out; // Smooth transition for hover effects
+  padding: 10px; // Adds spacing around the icon for the rounded effect
+
+  // Original state
+  background-color: transparent; // No background color initially
+  color: inherit; // Retains the original color
+  box-shadow: none; // No shadow initially
 
   &:hover {
-    background-color: #ffffff; // Bootstrap primary color
+    background-color: #ffffff; // Background color on hover
     color: rgb(26, 1, 1); // Change text color on hover
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Add shadow
-    transform: translateY(-4px); // Slightly lift the column
+    transform: translateY(-4px); // Slightly lift the icon
   }
 }

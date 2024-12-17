@@ -1,52 +1,107 @@
-/* Right-Side Bullet Points */
-.list-unstyled li {
-  font-size: 1rem;
-  line-height: 1.6;
+/* Default layout for carousel - Horizontal sliding */
+.carouselInner {
+  display: flex;
+  flex-direction: row;  /* Horizontal layout */
+  transition: transform 0.5s ease-in-out;
+}
 
-  i {
-    font-size: 1.2rem;
+/* Vertical sliding for mobile */
+@media (max-width: 768px) {
+  .carouselInner {
+    flex-direction: column; /* Vertical layout for mobile */
+    overflow: hidden; /* Hide overflow when sliding vertically */
+  }
+
+  .carousel-item {
+    height: 100vh;  /* Each slide should occupy the full viewport height */
+    width: 100%;
+  }
+
+  /* Modify carousel control positioning for vertical sliding */
+  .carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    z-index: 10;
+  }
+
+  .carousel-control-prev {
+    top: 20%; /* Previous control towards the top */
+  }
+
+  .carousel-control-next {
+    bottom: 20%; /* Next control towards the bottom */
+  }
+
+  .carousel-indicators {
+    display: flex;
+    flex-direction: column;  /* Stack dots vertically for mobile */
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    gap: 10px; /* Space between dots */
+  }
+
+  .carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #000;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .carousel-dot.active {
+    background-color: #c3afaf; /* Active dot color */
   }
 }
 
-/* Button Hover Effect */
-.btn-hover {
-  transition: all 0.3s ease;
-  background-color: #007bff;
-  border-color: #007bff;
-
-  &:hover {
-    background-color: #0056b3; /* Darker shade */
-    border-color: #0056b3;
-    transform: translateY(-3px); /* Slight upward movement */
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3); /* Shadow effect */
-  }
-}
-
-/* Badge Style for Left Section */
-.experience-badge {
+.carousel-indicators {
+  display: flex;
   position: absolute;
-  top: 550px;
-  left: 800px;
-  transform: rotate(-90deg);
-  padding: 9px 12px;
-  font-size: 0.5rem;
-  font-weight: bold;
-  letter-spacing: 0.05rem;
-  z-index: 10;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  gap: 10px; /* Space between dots */
 }
 
-.BGimage{
-  background: url('/bg.jpg');
-  background-size: cover; 
-  background-position: center; 
-  margin: 0; 
-  overflow: hidden; 
-  height: 300px; 
-  width: 100vw;
-  position: relative;
-
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #c3afaf;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+.carousel-dot.active {
+  background-color: #007bff; /* Active dot color */
+}
 
+.mobileContainer {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
 
+.mobileSlide {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.box {
+  border: 1px solid #333333;
+  width: 250px;
+  height: 100px;
+  overflow-y: scroll;
+}
 

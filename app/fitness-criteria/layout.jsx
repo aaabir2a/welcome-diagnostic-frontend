@@ -23,15 +23,15 @@ export default async function AboutLayout({ children }) {
     `${GET_CONTENTS_BY_MENU_ID}/${FitnessId}`
   );
   const FitnessContent = contentData?.menu_contents?.["Head"] || null;
-  console.log("Fitness content menu", FitnessContent);
+  // console.log("Fitness content menu", FitnessContent);
   const FitnessAboutContent = contentData?.menu_contents?.["About"] || null;
-  console.log("Fitness About content menu", FitnessAboutContent);
+  // console.log("Fitness About content menu", FitnessAboutContent);
 
   const imageData = await dataFetcher(`${GET_IMAGE_BY_MENU_ID}/${FitnessId}`);
   const FitnessImage = imageData?.content_images?.find(
     (img) => img?.head === "About"
   )?.image;
-  console.log("Fitness image menu", FitnessImage);
+  // console.log("Fitness image menu", FitnessImage);
 
   const aboutData = {
     FitnessContent,

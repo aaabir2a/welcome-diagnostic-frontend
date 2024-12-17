@@ -25,8 +25,8 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_4t2c3k3", // Replace with your EmailJS Service ID
-        "template_bfp5ii1", // Replace with your EmailJS Template ID
+        "service_4t2c3k3", 
+        "template_bfp5ii1", 
         {
           name: formData.name,
           email: formData.email,
@@ -34,7 +34,7 @@ const Contact = () => {
           subject: formData.subject,
           message: formData.message,
         },
-        "LWAfADAQLTFyUfsws" // Replace with your EmailJS Public Key
+        "LWAfADAQLTFyUfsws" 
       )
       .then(
         (response) => {
